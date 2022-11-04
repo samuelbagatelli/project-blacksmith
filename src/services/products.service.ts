@@ -1,9 +1,17 @@
 import { IProduct } from '../interfaces';
-import { postProduct } from '../models/products.model';
+import ProductsModel from '../models/products.model';
 
-export const createProduct = async (name: string, amount: string): Promise<IProduct> => {
-  const product = await postProduct(name, amount);
+const postProduct = async (name: string, amount: string): Promise<IProduct> => {
+  const product = await ProductsModel.postProduct(name, amount);
   return product;
 };
 
-export const anything = 'any';
+const getAllProducts = async (): Promise<IProduct[]> => {
+  const products = await ProductsModel.getAllProducts();
+  return products;
+};
+
+export default {
+  postProduct,
+  getAllProducts,
+};
