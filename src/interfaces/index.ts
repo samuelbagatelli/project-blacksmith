@@ -6,10 +6,10 @@ export interface IProduct {
 
 export interface IUser {
   id?: number,
-  username: string,
+  username?: string,
   classe?: string,
   level?: number,
-  password: string,
+  password?: string,
 }
 
 export interface IOrder {

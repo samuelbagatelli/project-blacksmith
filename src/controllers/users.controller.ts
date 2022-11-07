@@ -1,10 +1,14 @@
 import { Request, Response } from 'express';
 import usersService from '../services/users.service';
 
-export const generateToken = async (req: Request, res: Response) => {
+export const generateTokenRegister = async (req: Request, res: Response) => {
   const token = await usersService.generateToken(req.body);
 
   res.status(201).json({ token });
 };
 
-export const anything = 'any';
+export const generateTokenLogin = async (req: Request, res: Response) => {
+  const token = await usersService.generateToken(req.body);
+
+  res.status(200).json({ token });
+};

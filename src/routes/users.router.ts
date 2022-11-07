@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { generateToken } from '../controllers/users.controller';
+import { generateTokenRegister } from '../controllers/users.controller';
 
 const usersRouter = Router();
 
-usersRouter.post('/', generateToken);
+usersRouter.post('/', generateTokenRegister);
 
 export default usersRouter;
